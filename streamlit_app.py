@@ -1,10 +1,14 @@
 import streamlit as st
-import quandl
+try:
+    import quandl
+except:
+    !pip install -upgrade quandl
+    import quandl
 import pandas as pd
 import datetime
 import numpy as np
 
-key = input('Digite sua apikey do quandle. Deixe em branco para nenhuma. ')
+key = input('Digite sua apikey do Quandl. Deixe em branco para nenhuma. ')
 if len(key) < 1:
     key = None
 quandl.ApiConfig.api_key = key
