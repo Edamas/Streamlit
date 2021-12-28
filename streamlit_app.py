@@ -1,9 +1,5 @@
 import streamlit as st
-try:
-    import quandl
-except:
-    !pip install -upgrade quandl
-    import quandl
+import quandl
 import pandas as pd
 import datetime
 import numpy as np
@@ -27,8 +23,6 @@ def home():
     database_filter = st.sidebar.selectbox('texto', ['Brazil', 'Organisation'], key=1)
 
 def databases():
-    
-    
     db = quandl.Database.all()
     db_meta = pd.DataFrame()
     for n, database in enumerate(db.values):
